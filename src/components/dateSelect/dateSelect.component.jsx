@@ -8,15 +8,12 @@ let today = new Date();
 let d;
 let month;
 
-for(var i = 5; i >= 0; i -= 1) {
+//function to get previous 6 months
+for(let i = 5; i >= 0; i -= 1) {
   d = new Date(today.getFullYear(), today.getMonth() - i, 1);
   month = monthNames[d.getMonth()];
   previousSixMonths.push(month);
 }
-
-
-console.log(previousSixMonths)
-
 
 const DateSelect = ({setMonth}) => {
     return ( 

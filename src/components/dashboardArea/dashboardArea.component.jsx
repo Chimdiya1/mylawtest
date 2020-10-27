@@ -1,10 +1,11 @@
-import React, {useState,useEffect} from 'react';
-import './dashboardArea.scss'
-import InfoCard from '../infoCard/infoCard.component'
-import DateSelect from '../dateSelect/dateSelect.component'
-import Graph from '../graph/graph.component'
-import Table from '../table/table.component'
+import React, { useState, useEffect } from 'react';
+
+import './dashboardArea.scss';
+import DateSelect from '../dateSelect/dateSelect.component';
+import Graph from '../graph/graph.component';
+import InfoCard from '../infoCard/infoCard.component';
 import Spinner from '../../components/spinner/spinner.component';
+import Table from '../table/table.component';
 
 
 const getDate = () => {
@@ -13,7 +14,7 @@ const getDate = () => {
 }
 
 const DashboardArea = () => {
-    const [month, setMonth] = useState('October')
+    const [month, setMonth] = useState('October');
     const [data, setData] = useState({});
     const [cardDetails, setCardDetails] = useState([]);
     const [lawyers, setLawyers] = useState([]);
@@ -31,14 +32,17 @@ const DashboardArea = () => {
     //Fetching all the data needed
     useEffect(() => {
         setLoading(true);
+        //fetch graph data
         fetch(`${API_URL}/data`)
             .then((response) => response.json())
             .then((data) => {
                 setData(data);
+                //fetch card data
                 return fetch(`${API_URL}/cardDetails`)
                     .then((response) => response.json())
                     .then((details) => {
                         setCardDetails(details);
+                        //fetch lawyers data
                         return fetch(`${API_URL}/lawyers`)
                         .then((response) => response.json())
                         .then((details) => {
@@ -51,11 +55,11 @@ const DashboardArea = () => {
 
     //conditionally rendering the Spinner
     if (loading) {
-    return (
-      <div className="load">
-        <Spinner/>
-      </div>
-    );
+        return (
+            <div className="load">
+                <Spinner/>
+            </div>
+        );
     } else {
         return (
             <div className='dashboard-area'>

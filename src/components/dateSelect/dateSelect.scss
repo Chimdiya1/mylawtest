@@ -9,6 +9,6 @@
   cursor: pointer;
   transition: 0.2s all ease-in-out;
   &:hover {
-    border: 1px solid rgb(255, 224, 158);
+    border: 1px solid var(--light-orange);
   }
 }

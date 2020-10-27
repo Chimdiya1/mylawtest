@@ -1,3 +1,7 @@
+@mixin transition-ease {
+  transition: all 0.3s ease-in-out;
+}
+
 .navbar {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -7,14 +11,109 @@
   align-items: center;
   padding: 0px 40px;
   z-index: 2;
+  @media screen and(max-width:840px) {
+    padding: 0px 20px;
+    position: relative;
+    .nav-links {
+      display: none;
+      &.show {
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin-top: 210px;
+        margin-left: -20px;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+        .link {
+          cursor: pointer;
+          &:hover {
+            color: var(--dark-blue);
+          }
+          margin: 0.5rem 0rem;
+        }
+        .greeting {
+          margin: auto;
+          text-align: center;
+        }
+        .avatar {
+          width: 43px;
+          border-radius: 50%;
+        }
+      }
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    .menu-btn {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      right: 20px;
+      margin: auto 0px;
+      height: 20px;
+      width: 28px;
+      cursor: pointer;
+      @include transition-ease;
+
+      &__burger {
+        position: absolute;
+        top: 0.6rem;
+        width: 28px;
+        height: 2px;
+        background: black;
+        @include transition-ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: -8px;
+          width: 28px;
+          height: 2px;
+          background: black;
+          @include transition-ease;
+        }
+
+        &::after {
+          content: '';
+          right: 0;
+          position: absolute;
+          top: 8px;
+          width: 28px;
+          height: 2px;
+          background: black;
+          @include transition-ease;
+        }
+        &.show {
+          transform: rotate(180deg);
+          background: transparent;
+
+          &::before {
+            transform: rotate(45deg) translate(5px, 8px);
+          }
+          &::after {
+            width: 28px;
+            transform: rotate(-45deg) translate(3px, -7px);
+          }
+        }
+      }
+    }
+    .logo {
+      font-size: 18px;
+      margin-right: 24px;
+    }
+  }
 }
+
 .logo {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
-  line-height: 28px;
-  color: #0c2f5c;
+  color: var(--dark-blue);
   margin-right: 69px;
 }
 h3 {
@@ -32,7 +131,7 @@ h3 {
 .link {
   cursor: pointer;
   &:hover {
-    color: #0c2f5c;
+    color: var(--dark-blue);
   }
 }
 .greeting {

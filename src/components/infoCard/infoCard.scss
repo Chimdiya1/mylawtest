@@ -9,7 +9,7 @@
   transition: 0.2s all ease-in-out;
   &:hover {
     transform: scale(0.95);
-    background-color: rgb(255, 224, 158);
+    background-color: var(--light-orange);
   }
   .details {
     display: flex;
@@ -25,5 +25,9 @@
       line-height: 24px;
       color: #262626;
     }
+  }
+  @media screen and(max-width:840px) {
+    width: 48%;
+    margin-bottom: 0.5rem;
   }
 }
