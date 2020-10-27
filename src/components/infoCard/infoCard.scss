@@ -1,0 +1,29 @@
+.info-card {
+  background: #ffffff;
+  display: flex;
+  border-radius: 2px;
+  width: 24%;
+  height: 100px;
+  padding: 18px;
+  align-items: center;
+  transition: 0.2s all ease-in-out;
+  &:hover {
+    transform: scale(0.95);
+    background-color: rgb(255, 224, 158);
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-size: 18px;
+      line-height: 16px;
+      color: #787c90;
+      margin-bottom: 8px;
+    }
+    .amount {
+      font-size: 24px;
+      line-height: 24px;
+      color: #262626;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.dashboard-area {
+  background-color: rgb(229, 229, 229);
+  width: 100%;
+  padding: 40px;
+}
+.info-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.graph-area {
+  height: 60vh;
+  margin-top: 1rem;
+  border: 1px solid #eef8fd;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fa;
+  margin-bottom: 43px;
+  padding: 1rem;
+}
+.graphBody-header {
+  display: flex;
+  width: 40%;
+  align-items: center;
+}
+.load {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h3,
+h4 {
+  font-weight: normal;
+}

@@ -1,0 +1,14 @@
+.date-select {
+  border: 1px solid #afafaf;
+  border-radius: 4.25px;
+  background-color: #fff;
+  width: 138px;
+  height: 31px;
+  color: #000000;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+  &:hover {
+    border: 1px solid rgb(255, 224, 158);
+  }
+}
